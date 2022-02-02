@@ -1,0 +1,67 @@
+<section>
+  <style>
+        .container{
+            position: relative;
+            max-height: 82.5vh;
+        }
+        .edit{
+          margin-top: 4em;
+          padding-top: 4.5em;
+        }
+    </style>
+  <div class="container mt-4 edit">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="text-center">Edit Product</h2>
+        <form
+          action="/admin/edit-product/{{product._id}}"
+          enctype="multipart/form-data"
+          method="post"
+        >
+          <label for="">Name</label>
+          <input
+            type="text"
+            name="Name"
+            class="form-control"
+            value="{{product.Name}}"
+          />
+          <label for="">Category</label>
+          <input
+            type="text"
+            name="Category"
+            class="form-control"
+            value="{{product.Category}}"
+          /><br>
+          <label for="">Image</label>
+          <img
+            src="public/product-images/{{product._id}}.jpg"
+            alt="{{product.Name}}"
+            style="width: 100px;height:auto"
+            id="viewImage"
+          ><br>
+          <input
+            type="file"
+            name="image"
+            class="form-control ml-auto"
+            onchange="showImage(event)"
+          >
+          <label for="">Price</label>
+          <input
+            type="number"
+            name="Price"
+            class="form-control"
+            value="₹{{product.Price}}"
+          />
+          <button type="submit" class="btn btn-success mt-4">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function showImage(event){
+    document.getElementById('viewImage').src = URL.createObjectURL(event.target.files[0])
+  }
+</script>

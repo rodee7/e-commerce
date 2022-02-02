@@ -1,0 +1,73 @@
+<header>
+  <div class="header">
+    <a class="navbar-brand ml-4" href="/"><h3
+        style="color: #397a5b"
+      >BuyItFresh</h3></a>
+  </div>
+  <nav class="navbar navbar-custom navbar-expand-lg navbar-light">
+    <style>
+      .navbar-custom{ background-color: #03C769; padding: 0.5em 2em 0.5em 2em;
+      box-shadow: 0px 1px 2px 1px green inset; position: fixed;margin-top:
+      13px;width: 100%; z-index: 1;} .social { display: flex; flex-wrap: wrap;
+      justify-content: space-evenly; align-items: center; } .bottom{ padding:
+      5px; background: #03C769; box-shadow: 1px 1px 2px 0px green inset; }
+      .cart{background-color: #397a5b;} .header{position: fixed; margin-top:
+      -35px;background: white;width: 100%;z-index: 1;}
+    </style>
+
+    <button
+      class="navbar-toggler navbar-custom"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="color: #397a5b"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Products
+            <span class="sr-only">(current)</span></a>
+        </li>
+        {{#if user}}
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">Cart
+              <span class="badge badge-dark cart">{{itemsCount}}</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/orders">Orders</a>
+          </li>
+        {{/if}}
+      </ul>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{#if user}}
+            {{user.Name}}
+          {{else}}
+            Account
+          {{/if}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {{#if user}}
+            <a class="dropdown-item" href="/logout">Logout</a>
+          {{else}}
+            <a class="dropdown-item" href="/login">Login</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
