@@ -21,7 +21,7 @@
             <tbody>
                 {{#each products}}
                     <tr>
-                        <td>{{this.product.Name}} <br><br> <img src="../../public/product-images/{{this.product._id}}.jpg" alt="{{this.product.Name}}" style="width: 100px; height: 100px"></td>
+                        <td>{{this.product.Name}} <br><br> <img src="/product-images/{{this.product._id}}.jpg" alt="{{this.product.Name}}" style="width: 100px; height: 100px"></td>
                         <td>₹{{this.product.Price}}/pk</td>
                         <td>
                             <button class="cart-item-count remove-item mr-3" onclick="changeQuantity('{{this._id}}', '{{this.product._id}}', '{{../user._id}}', -1)">-</button>
@@ -39,7 +39,8 @@
         <div class="float-right mb-2 pr-5">
             <h3 class="float-right mt-5 mr-5">Sub Total ₹<span id="total">{{totalAmount}}</span></h3>
             {{#if emptyCart}}
-            <a href="/place-order/" class="btn btn-lg btn-success" style="width: 100%" disabled>Buy</a>
+            {{!-- <a href="/place-order/" class="btn btn-lg btn-success" style="width: 100%" disabled>Buy</a> --}}
+            <button type="button" class="btn btn-secondary btn-lg btn-success" style="width: 100%" disabled>Buy</button>
             {{else}}
             <a href="/place-order/" class="btn btn-lg btn-success" style="width: 100%">Buy</a>
             {{!-- <button type="button" class="btn btn-secondary btn-lg btn-success" style="width: 100%">Buy</button> --}}
