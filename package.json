@@ -23,5 +23,19 @@
   },
   "engines": {
     "node": "v16.13.0"
-  }
+  },
+  "description": "E-commerce website to shop your daily needs",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodee7/e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodee7/e-commerce/issues"
+  },
+  "homepage": "https://github.com/rodee7/e-commerce#readme"
 }
