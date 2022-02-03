@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "heroku-postbuild": "cd project && npm install --only=dev && npm install && npm run build"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.25.0",
